@@ -8,6 +8,10 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html {
+    font-size: 62.5%
+  }
+
   html, body, #root {
     min-height: 100%;
   }
@@ -19,7 +23,7 @@ export default createGlobalStyle`
 
   body, input, button {
     color: #222;
-    font-size: 14px;
+    font-size: 1.6rem;
 
     @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap');
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
