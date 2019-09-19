@@ -20,9 +20,9 @@ export const Container = styled.nav`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 
     img {
-      width: 25.9rem;
       height: 4.8rem;
 
       cursor: pointer;
@@ -60,7 +60,7 @@ export const ActionConatiner = styled.div`
     padding: 0.8rem;
 
     &:hover {
-      background: #00000011;
+      background: #f0f0f0;
     }
   }
 `;
