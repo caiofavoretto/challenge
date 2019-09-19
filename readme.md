@@ -44,12 +44,13 @@ Então mãos a obra e bom challenge ;)
 ## Como foi realizado
 
 A aplicação foi deselvolvida utilizando React, uma biblioteca JavaScript de código aberto que serve para criar interfaces de usuário através da componentização de elementos.
-Juntamente a isso, foram adicionadas outras dependências aos projeto para a construção de um código mais estruturado e de fácil entendimento, tais como:
+Juntamente a isso, foram adicionadas outras dependências ao projeto para a construção de um código mais estruturado e de fácil entendimento, tais como:
 - **Styled Components:** um tipo de css que funciona de forma parecida com SASS, porém é possível criar componentes React baseados em estilos pré-determinados.
 - **Axios:** utilizado para controle de requisições HTTP e consumo de APIs Rest
 
 O início do projeto se deu através de um planejamento por tickets em um quadro como esse
 ![board](docs/board.PNG)
+[**Link do quadro**](https://trello.com/b/MvkjTSxS/challenge-e-plus)
 A partir disso, foram geradas tarefas que compunham cada _commit_
 
 As funcionalidades criadas foram as seguintes:
