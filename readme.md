@@ -36,3 +36,25 @@ Então mãos a obra e bom challenge ;)
 - Boa descrição das funcionalidades do desafio
 - Fidelidade ao design proposto
 - Adaptação mobile
+
+# Descrição do teste realizado
+
+- Para visualizar o resultado basta clicar [**aqui**](https://challenge-eplus-caio.herokuapp.com/)
+
+## Como foi realizado
+
+A aplicação foi deselvolvida utilizando React, uma biblioteca JavaScript de código aberto que serve para criar interfaces de usuário através da componentização de elementos.
+Juntamente a isso, foram adicionadas outras dependências aos projeto para a construção de um código mais estruturado e de fácil entendimento, tais como:
+- **Styled Components:** um tipo de css que funciona de forma parecida com SASS, porém é possível criar componentes React baseados em estilos pré-determinados.
+- **Axios:** utilizado para controle de requisições HTTP e consumo de APIs Rest
+
+O início do projeto se deu através de um planejamento por tickets em um quadro como esse
+![board](docs/board.PNG)
+A partir disso, foram geradas tarefas que compunham cada _commit_
+
+As funcionalidades criadas foram as seguintes:
+- A aplicação funciona como um SPA (Single Page Aplication), por isso, possível mudar de aba sem perder o estado do menu superior.
+- A aplicação é responsiva e se adapta a qualquer tamanho de tela.
+- O sistema busca os dados de um json local através de uma requisição HTTP e preenche o carrinho de compras.
+- Caso não haja nada no carrinho, esta tele é exibida:
+![board](docs/carrinho.PNG)
