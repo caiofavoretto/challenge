@@ -11,6 +11,10 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
 
+  @media (max-width: 650px) {
+    width: 100vw;
+  }
+
   &::after {
     content: '';
     position: absolute;
@@ -23,6 +27,18 @@ export const Container = styled.div`
     border-top: 20px solid #f0f0f0;
     transform: rotate(180deg);
     clear: both;
+
+    @media (max-width: 1410px) {
+      right: calc(4rem + 20px);
+    }
+
+    @media (max-width: 1230px) {
+      right: calc(4rem + 96px);
+    }
+
+    @media (max-width: 425px) {
+      right: calc(4rem + 50px);
+    }
   }
 
   .product-container {
@@ -85,6 +101,10 @@ export const ProductItem = styled.div`
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
+
+      @media (max-width: 1410px) {
+        height: 30px;
+      }
     }
 
     .product-detail {

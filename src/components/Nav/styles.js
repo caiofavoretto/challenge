@@ -22,6 +22,23 @@ export const Container = styled.nav`
     justify-content: space-between;
     position: relative;
 
+    @media (max-width: 425px) {
+      padding: 0 15px;
+    }
+
+    .home-btn {
+      border: none;
+      background: none;
+    }
+
+    .crop {
+      @media (max-width: 650px) {
+        height: 40px;
+        width: 40px;
+        overflow: hidden;
+      }
+    }
+
     img {
       height: 4.8rem;
 
@@ -33,6 +50,20 @@ export const Container = styled.nav`
 export const NavLinkList = styled.ul`
   display: flex;
   list-style: none;
+  align-items: center;
+
+  @media (max-width: 1230px) {
+    display: ${props => (props.open ? 'flex' : 'none')};
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: #ffffffee;
+    z-index: 2;
+  }
 `;
 
 export const NavLink = styled.li`
@@ -49,6 +80,15 @@ export const NavLink = styled.li`
 export const ActionConatiner = styled.div`
   display: flex;
 
+  .nav-btn {
+    display: none;
+
+    @media (max-width: 1230px) {
+      display: block;
+      z-index: 3;
+    }
+  }
+
   button {
     display: flex;
     justify-content: center;
@@ -61,6 +101,10 @@ export const ActionConatiner = styled.div`
 
     &:hover {
       background: #f0f0f0;
+    }
+
+    @media (max-width: 425px) {
+      margin: 1.5rem 8px;
     }
   }
 `;

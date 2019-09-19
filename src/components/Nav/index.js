@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { MdSearch, MdPerson, MdShoppingCart } from 'react-icons/md';
+import { MdSearch, MdPerson, MdShoppingCart, MdMenu } from 'react-icons/md';
 
 import { Container, NavLinkList, NavLink, ActionConatiner } from './styles';
 
@@ -15,6 +15,7 @@ export default function Nav({ history, navLinksData }) {
   const [navLinks, setNavLinks] = useState(navLinksData);
   const [showCart, setShowCart] = useState(false);
   const [products, setProducts] = useState([]);
+  const [navOpen, setNavOpen] = useState(false);
 
   useEffect(() => {
     async function loadProductsData() {
@@ -26,7 +27,7 @@ export default function Nav({ history, navLinksData }) {
     }
 
     loadProductsData();
-  }, [products]);
+  }, []);
 
   function handleChangeLink(link) {
     const selected = navLinks.map(sec => {
@@ -35,22 +36,24 @@ export default function Nav({ history, navLinksData }) {
     });
 
     setNavLinks(selected);
-
+    setNavOpen(false);
     const formatedLink = link.replace(' ', '-').toLowerCase();
     history.push(`/${formatedLink}`);
-  }
-
-  function handleCartButton() {
-    setShowCart(!showCart);
   }
 
   return (
     <Container>
       <div className="nav-content">
-        <Link to="/">
-          <img src={logo} alt="Logo" />
-        </Link>
-        <NavLinkList>
+        <button
+          className="home-btn"
+          type="button"
+          onClick={() => handleChangeLink('')}
+        >
+          <div className="crop">
+            <img src={logo} alt="Logo" />
+          </div>
+        </button>
+        <NavLinkList open={navOpen}>
           {navLinks.map(navLink => (
             <NavLink
               key={navLink.name}
@@ -70,8 +73,20 @@ export default function Nav({ history, navLinksData }) {
             <MdPerson size={30} />
           </button>
 
-          <button type="button" className="cart-btn" onClick={handleCartButton}>
+          <button
+            type="button"
+            className="cart-btn"
+            onClick={() => setShowCart(!showCart)}
+          >
             <MdShoppingCart size={30} />
+          </button>
+
+          <button
+            type="button"
+            className="nav-btn"
+            onClick={() => setNavOpen(!navOpen)}
+          >
+            <MdMenu size={30} color="#00ba16" />
           </button>
         </ActionConatiner>
         {showCart && <Cart productsData={products} />}
