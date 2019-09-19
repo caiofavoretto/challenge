@@ -24,6 +24,8 @@ export const Container = styled.nav`
     img {
       width: 25.9rem;
       height: 4.8rem;
+
+      cursor: pointer;
     }
   }
 `;
@@ -31,18 +33,34 @@ export const Container = styled.nav`
 export const NavLinkList = styled.ul`
   display: flex;
   list-style: none;
+`;
 
-  li {
-    cursor: pointer;
-    font-weight: 300;
-    padding: 1.5rem 2rem;
+export const NavLink = styled.li`
+  cursor: pointer;
+  font-weight: ${props => (props.selected ? 700 : 300)};
+  margin: 1.5rem 2rem;
+  color: ${props => (props.selected ? '#00ba16' : '#333')};
+
+  &:hover {
+    color: #00ba16;
   }
 `;
 
 export const ActionConatiner = styled.div`
   display: flex;
 
-  div {
-    padding: 1.5rem 2.5rem;
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem 2rem;
+    border: none;
+    background: none;
+    border-radius: 50%;
+    padding: 0.8rem;
+
+    &:hover {
+      background: #00000011;
+    }
   }
 `;

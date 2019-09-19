@@ -8,6 +8,11 @@ export default function Routes() {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={Main} />
+        <Route path="/lorem-ipsum1" exact component={Main} />
+        <Route path="/lorem-ipsum2" exact component={Main} />
+        <Route path="/lorem-ipsum3" exact component={Main} />
+        <Route path="/lorem-ipsum4" exact component={Main} />
+        <Route path="/lorem-ipsum5" exact component={Main} />
       </Switch>
     </BrowserRouter>
   );
