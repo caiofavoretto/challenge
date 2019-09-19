@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { MdSearch, MdPerson, MdShoppingCart } from 'react-icons/md';
 
 import { Container, NavLinkList, NavLink, ActionConatiner } from './styles';
+
+import api from '../../services/api';
 
 import Cart from '../Cart';
 
@@ -12,53 +14,19 @@ import logo from '../../assets/logo/agencia-eplus-n-logo.png';
 export default function Nav({ history, navLinksData }) {
   const [navLinks, setNavLinks] = useState(navLinksData);
   const [showCart, setShowCart] = useState(false);
+  const [products, setProducts] = useState([]);
 
-  const productsData = [
-    {
-      productId: 100,
-      name:
-        'Notebook Samsung, Intel® Core™ i7, 16GB, 256GB SSD, Tela de 15”, Style S51 Pro - NP900X5T-XW1BR - SGNP900X5TXW1_PRD',
-      salesChannel: '1',
-      available: true,
-      bestPriceFormated: 'R$ 7.158,21',
-      bestPrice: 715821,
-      quantity: 1,
-      image: 'data/images/products/note01-samsung-160-160.jpg',
-    },
-    {
-      productId: 101,
-      name:
-        'Notebook Samsung, Intel® Core™ i7, 16GB, 256GB SSD, Tela de 15”, Style S51 Pro - NP900X5T-XW1BR - SGNP900X5TXW1_PRD',
-      salesChannel: '1',
-      available: true,
-      bestPriceFormated: 'R$ 7.158,21',
-      bestPrice: 715821,
-      quantity: 1,
-      image: 'data/images/products/note01-samsung-160-160.jpg',
-    },
-    {
-      productId: 102,
-      name:
-        'Notebook Samsung, Intel® Core™ i7, 16GB, 256GB SSD, Tela de 15”, Style S51 Pro - NP900X5T-XW1BR - SGNP900X5TXW1_PRD',
-      salesChannel: '1',
-      available: true,
-      bestPriceFormated: 'R$ 7.158,21',
-      bestPrice: 715821,
-      quantity: 1,
-      image: 'data/images/products/note01-samsung-160-160.jpg',
-    },
-    {
-      productId: 103,
-      name:
-        'Notebook Samsung, Intel® Core™ i7, 16GB, 256GB SSD, Tela de 15”, Style S51 Pro - NP900X5T-XW1BR - SGNP900X5TXW1_PRD',
-      salesChannel: '1',
-      available: true,
-      bestPriceFormated: 'R$ 7.158,21',
-      bestPrice: 715821,
-      quantity: 1,
-      image: 'data/images/products/note01-samsung-160-160.jpg',
-    },
-  ];
+  useEffect(() => {
+    async function loadProductsData() {
+      const response = await api.get('products.json');
+
+      if (response.data.cart.item.length > 0) {
+        setProducts(response.data.cart.item);
+      }
+    }
+
+    loadProductsData();
+  }, [products]);
 
   function handleChangeLink(link) {
     const selected = navLinks.map(sec => {
@@ -106,7 +74,7 @@ export default function Nav({ history, navLinksData }) {
             <MdShoppingCart size={30} />
           </button>
         </ActionConatiner>
-        {showCart && <Cart productsData={productsData} />}
+        {showCart && <Cart productsData={products} />}
       </div>
     </Container>
   );

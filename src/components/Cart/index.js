@@ -1,17 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { MdRemoveShoppingCart } from 'react-icons/md';
 
 import { Container, ProductItem, CloseCartContainer } from './styles';
 
 export default function Cart({ productsData }) {
-  const [products, setProducts] = useState(productsData);
+  const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    productsData.map(item => {
+      setTotal(total + item.bestPrice / 100);
+    });
+  }, []);
 
   return (
     <Container>
-      {products.length > 0 ? (
+      {productsData.length > 0 ? (
         <div className="product-container">
-          {products.map(product => (
+          {productsData.map(product => (
             <ProductItem key={product.productId}>
               <picture>
                 <img src={product.image} alt={product.name} />
@@ -33,11 +39,18 @@ export default function Cart({ productsData }) {
         </div>
       )}
 
-      {products.length > 0 && (
+      {productsData.length > 0 && (
         <CloseCartContainer>
           <div className="total">
             <span>
-              Total do pedido: <strong>R$ 20.356,95</strong>
+              Total do pedido:{' '}
+              <strong>
+                {' '}
+                {total.toLocaleString('pt-BR', {
+                  style: 'currency',
+                  currency: 'BRL',
+                })}
+              </strong>
             </span>
           </div>
           <button type="button">FINALIZAR COMPRA</button>
