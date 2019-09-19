@@ -9,10 +9,10 @@ export default createGlobalStyle`
   }
 
   html {
-    font-size: 10px;/*font-size: 62.5%;*/
+    font-size: 62.5%;
 
     @media (max-width: 1410px) {
-      font-size: 8.64px;/*font-size: 54%;*/
+      font-size: 54%;
     }
   }
 
@@ -29,7 +29,7 @@ export default createGlobalStyle`
     color: #222;
     font-size: 1.6rem;
 
-    @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap');
+    /* @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap'); */
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   }
 
