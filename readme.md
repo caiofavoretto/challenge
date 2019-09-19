@@ -17,7 +17,7 @@ Então mãos a obra e bom challenge ;)
 
 - Faça um fork deste repositório em seu GitHub
 - Adicione ao Readme uma descrição de como executar seu projeto
-- Descreva as funcionalidades do seu desafio, nos conte tudo que fez! Se fez o desafio utilizando pré-processadores, por exemplo, pois usaremos estas informações para avaliá-lo. 
+- Descreva as funcionalidades do seu desafio, nos conte tudo que fez! Se fez o desafio utilizando pré-processadores, por exemplo, pois usaremos estas informações para avaliá-lo.
 - O ideal é que este challenge leve até 8h.
 - Faça commits parciais, para que possamos acompanhar o seu desenvolvimento.
 - Em caso de dúvidas, entre em contato com rodrigo.freitas@agenciaeplus.com.br ou nadia@agenciaeplus.com.br
@@ -25,8 +25,8 @@ Então mãos a obra e bom challenge ;)
 ## Dicas
 
 - Os ícones usados, são todos do Material Design. https://material.io/icons/
-- A fonte utilizada é Montserrat (Está fonte se encontra no google fonts). 
-- Trabalhamos com clientes perfeccionistas, portanto tenha atenção com espaçamentos, tamanhos e estilos de fonte. 
+- A fonte utilizada é Montserrat (Está fonte se encontra no google fonts).
+- Trabalhamos com clientes perfeccionistas, portanto tenha atenção com espaçamentos, tamanhos e estilos de fonte.
 
 ## Critérios de avaliação
 
